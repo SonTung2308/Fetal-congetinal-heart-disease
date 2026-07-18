@@ -1,0 +1,7 @@
+Model size: 2.62605M
+ ========== 
+Args:Namespace(split='../datasets/us_dataset/splits_50.json', split_id=0, gtpath='../datasets/us_dataset/gt_scores/', train_model='unsup', reward_type='Rall', comb_score=True, lr=0.0001, proportion=0.15, hidden_dim=256, num_layers=1, rnn_cell='lstm', weight_decay=1e-05, max_epoch=200, stepsize=60, gamma=0.5, num_episode=5, beta=0.1, seed=1, gpu='1', save_dir='output_sup', resume='', verbose=False, save_path='output_sup/unsup/split0') 
+========== 
+========Unsupervised Learning========
+Currently using CPU
+=====> Start training <===== 

@@ -1,0 +1,18 @@
+Model size: 4.72320M
+ ========== 
+Args:Namespace(split='../datasets/us_dataset/splits_50.json', split_id=0, gtpath='../datasets/us_dataset/gt_scores/', train_model='unsup', reward_type='Rall', comb_score=True, lr=0.0001, proportion=0.15, hidden_dim=256, num_layers=1, rnn_cell='lstm', weight_decay=1e-05, max_epoch=100, stepsize=60, gamma=0.5, num_episode=5, beta=0.1, seed=1, gpu='1', save_dir='output', resume='', verbose=False, save_path='output/unsup/split0') 
+========== 
+========Unsupervised Learning========
+Currently using CPU
+=====> Start training (Hybrid Reward Mode) <===== 
+epoch 5/100	 reward 1.8450	 sum_loss 0.0000	 cost 0.0262
+epoch 10/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0253
+epoch 15/100	 reward 1.8452	 sum_loss 0.0000	 cost 0.0252
+epoch 20/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0251
+epoch 25/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0250
+epoch 30/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0250
+epoch 35/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0250
+epoch 40/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0250
+epoch 45/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0250
+epoch 50/100	 reward 1.8467	 sum_loss 0.0000	 cost 0.0250
+epoch:050	 F45:25.00%	 P45:16.67%	 R45:50.00%
