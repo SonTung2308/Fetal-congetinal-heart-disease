@@ -1,0 +1,36 @@
+# Data
+data/
+*.h5
+
+# Model weights / checkpoints
+*.pth
+*.pt
+*.ckpt
+
+# Frames / extracted images / large media
+Set_of_frames/
+Set_of_frames_dynamic/
+Set_of_frames_pediatric/
+demo_detect/
+demo_detect_v3/
+demo_setofframes/
+Extract_features/
+
+# Training outputs / logs
+output/
+output_hybrid/
+output_hybrid_KHOI/
+output_hybrid_dyn_KHOI/
+output_kvasir/
+output_sup/
+logs/*.log
+
+# Reports (Vietnamese writeups, not source code)
+BAOCAO_*.md
+KICHBAN_*.md
+
+# Misc
+.DS_Store
+**/__pycache__/
+**/.cph/
+*.pyc

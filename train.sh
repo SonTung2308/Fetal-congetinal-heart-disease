@@ -10,7 +10,7 @@ rm -rf output_hybrid
 # 2. HUẤN LUYỆN MÔ HÌNH RL
 # ==========================================
 PYTHONPATH=. python3 scripts/script_us_vsumm_train_test.py \
-    --gpu 1 \
+    --gpu 0 \
     --max-epoch 50 \
     --save-dir output_hybrid \
     --reward-type Rall \

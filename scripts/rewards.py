@@ -123,16 +123,16 @@ def compute_reward_det_coff(seq, actions, det_scores, det_class,  episode,
     # reward_rep = torch.exp(torch.FloatTensor([-dist_mat.mean()]))[0] # representativeness reward [Eq.5]
     reward_rep = torch.exp(-dist_mat.mean())
 
-    det_class = torch.from_numpy(det_class.astype(int))
-    det_scores = torch.from_numpy(det_scores)
-    sp_det_score = torch.zeros(n) # the score of standard plane detection
-
-    for i in range(n):
-        det_cls = det_class[i]
-        if det_cls[0] != 3:
-            sp_det_score[i] = det_scores[i][det_cls]
-        else:
-            sp_det_score[i] = -det_scores[i][3]
+    det_class = torch.from_numpy(det_class.astype(int)).to(seq.device)
+    det_scores = torch.from_numpy(det_scores).to(seq.device)
+    # the score of standard plane detection
+    # Vector hoá vòng lặp theo frame (kết quả y hệt bản lặp Python, nhanh hơn nhiều)
+    cls_idx = det_class[:, 0]
+    is_bg = cls_idx == 3  # lớp 3 = nền, đóng góp điểm âm
+    gather_idx = cls_idx.clamp(0, det_scores.size(1) - 1)
+    sp_det_score = det_scores.gather(1, gather_idx.unsqueeze(1)).squeeze(1).float()
+    if is_bg.any():
+        sp_det_score = torch.where(is_bg, -det_scores[:, 3].float(), sp_det_score)
 
     pick_scores = sp_det_score[pick_idxs]
     reward_det = torch.sum(pick_scores)/num_picks # (norm_summ_scores)
